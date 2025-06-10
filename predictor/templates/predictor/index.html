@@ -1,0 +1,424 @@
+{% extends 'predictor/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero Section -->
+<section class="gradient-bg text-white py-16 md:py-24">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Deteksi Dini Risiko Diabetes dengan
+                    Kecerdasan Buatan</h1>
+                <p class="text-xl text-primary-100 mb-8">Prediksi kemungkinan diabetes Anda secara akurat dalam hitungan
+                    detik dengan teknologi machine learning terkini.</p>
+                <div class="flex space-x-4">
+                    <a href="#predict-form"
+                        class="bg-white text-primary-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium shadow-lg transition duration-300 transform hover:scale-105">
+                        Coba Sekarang
+                    </a>
+                    <a href="#"
+                        class="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-float">
+                <lottie-player src="{% static 'predictor/animation2.json' %}" background="transparent" speed="1"
+                    style="width: 100%; max-width: 500px;" loop autoplay></lottie-player>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Mengapa Memilih DiabetesGuard?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Platform prediksi diabetes paling akurat dengan antarmuka yang
+                mudah digunakan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-center mb-3">Akurat</h3>
+                <p class="text-gray-600 text-center">Menggunakan model KNN yang telah dilatih dengan dataset ribuan
+                    pasien untuk hasil prediksi yang akurat.</p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-center mb-3">Cepat</h3>
+                <p class="text-gray-600 text-center">Hasil prediksi instan dalam hitungan detik tanpa perlu menunggu
+                    lama.</p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-center mb-3">Cloud-Based</h3>
+                <p class="text-gray-600 text-center">Akses dari mana saja, kapan saja tanpa perlu menginstal aplikasi.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Prediction Form Section -->
+<section id="predict-form" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/2 gradient-bg p-8 text-white flex flex-col justify-center">
+                    <h2 class="text-2xl font-bold mb-4">Prediksi Risiko Diabetes Anda</h2>
+                    <p class="mb-6">Isi form dengan data kesehatan Anda untuk mendapatkan prediksi risiko diabetes
+                        secara instan.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary-200" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-sm text-primary-100">Data Anda aman dan tidak akan disimpan</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-secondary-200" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-sm text-primary-100">Hasil prediksi bukan diagnosis medis</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 hidden md:block">
+                        <lottie-player src="{% static 'predictor/animation.json' %}" background="transparent" speed="1"
+                            style="width: 100%;" loop autoplay></lottie-player>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 p-8">
+                    <form id="predictionForm" class="space-y-6">
+                        {% csrf_token %}
+
+                        <div>
+                            <label for="pregnancies" class="block text-sm font-medium text-gray-700 mb-1">
+                                Jumlah Kehamilan
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="pregnancies" name="pregnancies"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                                    min="0" max="20" placeholder="0" required>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <span class="text-gray-500">kali</span>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-xs text-gray-500">Masukkan 0 jika tidak pernah hamil</p>
+                        </div>
+
+                        <div>
+                            <label for="glucose" class="block text-sm font-medium text-gray-700 mb-1">
+                                Kadar Glukosa (mg/dL)
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="glucose" name="glucose"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                                    min="0" max="300" placeholder="120" required>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <span class="text-gray-500">mg/dL</span>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-xs text-gray-500">Kadar gula darah setelah puasa 8 jam</p>
+                        </div>
+
+                        <div>
+                            <label for="bmi" class="block text-sm font-medium text-gray-700 mb-1">
+                                Indeks Massa Tubuh (BMI)
+                            </label>
+                            <div class="relative">
+                                <input type="number" step="0.1" id="bmi" name="bmi"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                                    min="10" max="50" placeholder="22.5" required>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <span class="text-gray-500">kg/m²</span>
+                                </div>
+                            </div>
+                            <p class="mt-1 text-xs text-gray-500">Berat (kg) / (Tinggi (m))²</p>
+                        </div>
+
+                        <div>
+                            <label for="dpf" class="block text-sm font-medium text-gray-700 mb-1">
+                                Riwayat Diabetes Keluarga
+                            </label>
+                            <input type="range" id="dpf" name="dpf" min="0" max="2.5" step="0.001" value="0.5"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                oninput="updateSliderValue(this.value)">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>Rendah</span>
+                                <span id="sliderValue">0.5</span>
+                                <span>Tinggi</span>
+                            </div>
+                            <p class="mt-1 text-xs text-gray-500">Faktor genetik berdasarkan riwayat keluarga</p>
+                        </div>
+
+                        <div>
+                            <label for="age" class="block text-sm font-medium text-gray-700 mb-1">
+                                Usia
+                            </label>
+                            <div class="relative">
+                                <input type="number" id="age" name="age"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                                    min="20" max="100" placeholder="30" required>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <span class="text-gray-500">tahun</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full gradient-bg text-white py-3 px-4 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition transform hover:scale-[1.01]">
+                            Prediksi Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline ml-1" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hasil Prediksi -->
+<div id="resultContainer" class="hidden px-4">
+    <div class="max-w-5xl mx-auto mt-8 mb-16">
+        <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-xl">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-blue-600" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Hasil Prediksi Diabetes
+            </h3>
+
+            <!-- POSITIF -->
+            <div id="positiveResult" class="hidden">
+                <div class="flex flex-col md:flex-row items-start bg-red-50 p-6 rounded-xl border-l-4 border-red-500">
+                    <div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+                        <div class="w-32 h-32 bg-red-100 rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-red-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 md:pl-6">
+                        <h4 class="text-xl font-bold text-red-800 mb-3">Hasil Prediksi: <span class="underline">RISIKO
+                                TINGGI</span></h4>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-red-700">Probabilitas Prediksi Positive</span>
+                                <span class="text-sm font-medium text-red-900"><span
+                                        id="probabilityValue">0</span>%</span>
+                            </div>
+                            <div class="w-full bg-red-200 rounded-full h-2.5">
+                                <div id="probabilityBar" class="bg-red-600 h-2.5 rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-red-200">
+                            <h5 class="font-semibold text-red-700 mb-2 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Rekomendasi
+                            </h5>
+                            <ul class="list-disc list-inside text-sm text-red-700 space-y-1">
+                                <li>Segera konsultasikan dengan dokter atau ahli endokrinologi</li>
+                                <li>Lakukan pemeriksaan HbA1c untuk konfirmasi</li>
+                                <li>Mulai pola makan sehat rendah gula dan karbohidrat</li>
+                                <li>Tingkatkan aktivitas fisik secara bertahap</li>
+                                <li>Monitor kadar gula darah secara berkala</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEGATIF -->
+            <div id="negativeResult" class="hidden">
+                <div
+                    class="flex flex-col md:flex-row items-start bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                    <div class="md:w-1/4 flex justify-center mb-4 md:mb-0">
+                        <div class="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 md:pl-6">
+                        <h4 class="text-xl font-bold text-green-800 mb-3">Hasil Prediksi: <span class="underline">RISIKO
+                                RENDAH</span></h4>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-green-700">Probabilitas Prediksi Negatif</span>
+                                <span class="text-sm font-medium text-green-900"><span
+                                        id="probabilityValueNegative">0</span>%</span>
+                            </div>
+                            <div class="w-full bg-green-200 rounded-full h-2.5">
+                                <div id="probabilityBarNegative" class="bg-green-600 h-2.5 rounded-full"
+                                    style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-green-200">
+                            <h5 class="font-semibold text-green-700 mb-2 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Tips Pencegahan
+                            </h5>
+                            <ul class="list-disc list-inside text-sm text-green-700 space-y-1">
+                                <li>Pertahankan berat badan ideal</li>
+                                <li>Konsumsi makanan tinggi serat dan rendah gula</li>
+                                <li>Olahraga teratur minimal 30 menit/hari</li>
+                                <li>Hindari merokok dan minuman beralkohol</li>
+                                <li>Periksa kesehatan rutin setahun sekali</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button onclick="window.location.href='#predict-form'"
+                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center justify-center mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Kembali ke Form Prediksi
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Tampilkan loading
+        Swal.fire({
+            title: 'Memproses data...',
+            html: 'Sedang melakukan prediksi, harap tunggu',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
+
+        // Ambil data form
+        const formData = new FormData(this);
+
+        // Kirim data ke server
+        fetch('/predict/', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                Swal.close();
+
+                if (data.status === 'success') {
+                    // Tampilkan hasil
+                    document.getElementById('resultContainer').classList.remove('hidden');
+
+                    if (data.prediction === 1) {
+                        // Positif diabetes
+                        document.getElementById('positiveResult').classList.remove('hidden');
+                        document.getElementById('negativeResult').classList.add('hidden');
+                        document.getElementById('probabilityValue').textContent = data.probability.toFixed(2) + '';
+
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Hasil Prediksi: Positif Diabetes',
+                            text: 'Disarankan untuk berkonsultasi dengan dokter',
+                            confirmButtonColor: '#3085d6',
+                        });
+                    } else {
+                        // Negatif diabetes
+                        document.getElementById('negativeResult').classList.remove('hidden');
+                        document.getElementById('positiveResult').classList.add('hidden');
+                        document.getElementById('probabilityValueNegative').textContent = data.probability.toFixed(2) + '';
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Hasil Prediksi: Negatif Diabetes',
+                            text: 'Tetap jaga pola hidup sehat!',
+                            confirmButtonColor: '#3085d6',
+                        });
+                    }
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Terjadi Kesalahan',
+                        text: data.message,
+                        confirmButtonColor: '#3085d6',
+                    });
+                }
+            })
+            .catch(error => {
+                Swal.close();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Terjadi Kesalahan',
+                    text: error.message,
+                    confirmButtonColor: '#3085d6',
+                });
+            });
+    });
+</script>
+{% endblock %}
